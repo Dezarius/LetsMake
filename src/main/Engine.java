@@ -33,8 +33,8 @@ public class Engine extends StateBasedGame{
   public void initStatesList(GameContainer gc) throws SlickException {
     //Some Framerate and logic stuff
     gc.setTargetFrameRate(60);
+    gc.getGraphics().setAntiAlias(true);
     gc.setAlwaysRender(true);
-    gc.setMinimumLogicUpdateInterval(20);
     gc.setVSync(true);
     gc.setShowFPS(false);
     

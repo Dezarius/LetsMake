@@ -13,4 +13,15 @@ import org.newdawn.slick.GameContainer;
  */
 public class Utilities {
     
+    public static double gravity(double velY, int delta) {
+        
+        if(velY < 1) {
+            velY += 0.0008 * delta;
+        }
+        else {
+            velY = 1;
+        }
+        
+        return velY;
+    }
 }

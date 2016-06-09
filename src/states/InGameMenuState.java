@@ -40,7 +40,7 @@ public class InGameMenuState extends BasicGameState {
 
     @Override
     public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
-        Keyboard.keyInput(container, game);
+        Keyboard.keyInput(container, game, delta);
     }
     
 }

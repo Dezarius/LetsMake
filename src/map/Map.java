@@ -16,6 +16,7 @@ import config.Config;
  */
 public class Map {
     
+    public int currentMapID = -1;
     private final String maps[] = {
         "/res/maps/map01.tmx" //0
     };
@@ -23,7 +24,8 @@ public class Map {
     private static TiledMap currentMap = null;
     
     public Map(int id) throws SlickException {
-       loadMap(id); 
+       loadMap(id);
+       currentMapID = id;
     }
     
     private void loadMap(int id) throws SlickException {
@@ -44,5 +46,14 @@ public class Map {
     
     public void render(int x, int y, int layer) {
         currentMap.render(x, y, layer);
+    }
+    
+    public boolean collsion(double x, double y) {
+        if(x <= currentMap.getWidth() * Config.tileSize && x >= 0 && y <= currentMap.getHeight() * Config.tileSize && y >= 0) {
+            if(currentMap.getTileId((int)(x/Config.playerWidth), (int)(y/Config.playerHeight), currentMap.getLayerIndex("solids")) != 0) {
+                return true;
+            }
+        }
+        return false;
     }
 }

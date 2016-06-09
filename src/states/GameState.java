@@ -5,6 +5,7 @@
  */
 package states;
 
+import entitys.EntityManager;
 import gui.Camera;
 import input.Keyboard;
 import map.MapManager;
@@ -40,7 +41,7 @@ public class GameState extends BasicGameState {
 
     @Override
     public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
-        Keyboard.keyInput(container, game);
+        Keyboard.keyInput(container, game, delta);
+        EntityManager.move(delta);
     }
-    
 }

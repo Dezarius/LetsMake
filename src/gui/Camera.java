@@ -17,7 +17,11 @@ import org.newdawn.slick.state.StateBasedGame;
  * @author Jan
  */
 public class Camera {
+    private static int delta = 0;
     
+    public void updatedelta(int delta) {
+        this.delta = delta;
+    }
     
     public static void drawPlayer() {
         Resources.getImage("player").draw((int) EntityManager.player.getX(), (int) EntityManager.player.getY());
@@ -32,7 +36,7 @@ public class Camera {
     }
     
     public static void drawDebug(GameContainer container, StateBasedGame game, Graphics g) {
-        Debug.drawDebug(container, game, g);
+        Debug.drawDebug(container, game, g, delta);
     }
     
     

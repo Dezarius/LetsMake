@@ -13,4 +13,8 @@ public class EntityManager {
     
     public static Player player = new Player();
     
+    public static void move(int delta) {
+        player.move(delta);
+    }
+    
 }

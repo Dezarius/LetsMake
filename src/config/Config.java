@@ -6,5 +6,9 @@
 package config;
 
 public class Config {
-    public static int tileSize = 32;
+    public static double tileSize = 32.0;
+    
+    public static int playerWidth = 32;
+    public static int playerHeight = 32;
+    public static int jumpCount = 2;
 }
